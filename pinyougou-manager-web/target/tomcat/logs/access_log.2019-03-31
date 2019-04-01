@@ -1,0 +1,4 @@
+0:0:0:0:0:0:0:1 - - [31/Mar/2019:00:44:09 +0800] "GET /brand/findAll.do HTTP/1.1" 200 908 http-bio-9101-exec-1 3289
+0:0:0:0:0:0:0:1 - - [31/Mar/2019:00:44:09 +0800] "GET /favicon.ico HTTP/1.1" 404 973 http-bio-9101-exec-3 8
+0:0:0:0:0:0:0:1 - - [31/Mar/2019:08:51:56 +0800] "GET /brand/findAll.do HTTP/1.1" 200 908 http-bio-9101-exec-5 1108
+0:0:0:0:0:0:0:1 - - [31/Mar/2019:12:42:00 +0800] "GET /brand/findAll.do HTTP/1.1" 200 908 http-bio-9101-exec-1 2957
