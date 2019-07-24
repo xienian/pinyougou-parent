@@ -105,7 +105,7 @@ public class ContentServiceImpl implements ContentService {
 		Criteria criteria = example.createCriteria();
 		
 		if(content!=null){			
-						if(content.getTitle()!=null && content.getTitle().length()>0){
+				if(content.getTitle()!=null && content.getTitle().length()>0){
 				criteria.andTitleLike("%"+content.getTitle()+"%");
 			}
 			if(content.getUrl()!=null && content.getUrl().length()>0){
@@ -123,6 +123,17 @@ public class ContentServiceImpl implements ContentService {
 		Page<TbContent> page= (Page<TbContent>)contentMapper.selectByExample(example);		
 		return new PageResult(page.getTotal(), page.getResult());
 	}
+
+/*		@Override
+		public List<TbContent> findByCategoryId(Long categoryId) {
+			TbContentExample example = new TbContentExample();
+			Criteria criteria = example.createCriteria();
+			criteria.andCategoryIdEqualTo(categoryId);
+			criteria.andStatusEqualTo("1");
+			example.setOrderByClause("sort_order");
+			
+			return contentMapper.selectByExample(example);
+		}*/
 		
 	@Autowired
 	private RedisTemplate redisTemplate;
