@@ -1,4 +1,5 @@
 package com.pinyougou.manager.controller;
+import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.RequestBody;
@@ -6,7 +7,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.pinyougou.pojo.TbGoods;
+import com.pinyougou.pojo.TbItem;
 import com.pinyougou.pojogroup.Goods;
+import com.pinyougou.search.service.ItemSearchService;
 import com.pinyougou.sellergoods.service.GoodsService;
 
 import entity.PageResult;
@@ -81,6 +84,8 @@ public class GoodsController {
 	public Result delete(Long [] ids){
 		try {
 			goodsService.delete(ids);
+			//批量删除商品索引库
+			itemSearchService.deleByGoodsIds(Arrays.asList(ids));
 			return new Result(true, "删除成功"); 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -102,18 +107,33 @@ public class GoodsController {
 	
 	/**
 	 * 功能：
-	 * 1.更新商品审核
+	 * 1.更新商品审核;
+	 * 2.更新
 	 * @param ids
 	 * @param status
 	 * @return
 	 */
+	@Reference
+	ItemSearchService itemSearchService;
+	
 	@RequestMapping("/updateStatus")
 	public Result updateStatus(Long[] ids,String status) {
 		try {
 			goodsService.updateStatus(ids, status);
+			//批量更新商品到索引库
+			if("1".equals(status)) {
+				List<TbItem> itemList = goodsService.findItemListByGoodsIdandStatus(ids, status);
+				
+				if (itemList.size()>0) {
+					itemSearchService.importList(itemList);
+				}else {
+					System.out.println("没有明细数据");
+				}
+			}
+			
 			return new Result(true, "审核成功");
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 			return new Result(false, "审核失败");
 		}
