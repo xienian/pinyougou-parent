@@ -38,7 +38,7 @@ public class SolrUtil {
 			item.setSpecMap(specMap);
 		}
 		
-		solrTemplate.saveBeans(itemList);
+		solrTemplate.saveBeans(itemList);//执行插入或更新，在改变solr字段属性后也能更新
 		solrTemplate.commit();
 		
 		System.out.println("---结束---");
