@@ -4,6 +4,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,9 +15,15 @@ import org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer;
 import com.alibaba.dubbo.config.annotation.Service;
 import com.pinyougou.mapper.TbGoodsDescMapper;
 import com.pinyougou.mapper.TbGoodsMapper;
+import com.pinyougou.mapper.TbItemCatMapper;
+import com.pinyougou.mapper.TbItemMapper;
 import com.pinyougou.page.service.ItemPageService;
 import com.pinyougou.pojo.TbGoods;
 import com.pinyougou.pojo.TbGoodsDesc;
+import com.pinyougou.pojo.TbItem;
+import com.pinyougou.pojo.TbItemCatExample;
+import com.pinyougou.pojo.TbItemExample;
+import com.pinyougou.pojo.TbItemExample.Criteria;
 
 import freemarker.core.ParseException;
 import freemarker.template.Configuration;
@@ -40,7 +47,12 @@ public class ItemPageServiceImpl implements ItemPageService {
 	@Autowired
 	private TbGoodsDescMapper tbGoodsDescMapper;
 	
-
+	@Autowired
+	private TbItemCatMapper tbItemCatMapper;
+	
+	@Autowired
+	private TbItemMapper tbItemMapper;
+	
 	@Override
 	public boolean genItemHtml(Long goodsId) {
 		Writer writer = null;
@@ -50,12 +62,31 @@ public class ItemPageServiceImpl implements ItemPageService {
 		//2.获取模板对象
 			Template template=configuration.getTemplate("item.ftl");
 			//3.生成数据模型
+			
+			//3.1商品数据
 			Map dataModel=new HashMap();
 			TbGoods goods=tbGoodsMapper.selectByPrimaryKey(goodsId);
 			dataModel.put("goods", goods);
-			
+			//3.2商品详情数据
 			TbGoodsDesc goodsDesc=tbGoodsDescMapper.selectByPrimaryKey(goodsId);
 			dataModel.put("goodsDesc", goodsDesc);
+			//3.3获取商品3个分类
+			String itemCat1=tbItemCatMapper.selectByPrimaryKey(goods.getCategory1Id()).getName();
+			String itemCat2=tbItemCatMapper.selectByPrimaryKey(goods.getCategory2Id()).getName();
+			String itemCat3=tbItemCatMapper.selectByPrimaryKey(goods.getCategory3Id()).getName();
+			dataModel.put("itemCat1", itemCat1);
+			dataModel.put("itemCat2", itemCat2);
+			dataModel.put("itemCat3", itemCat3);
+			//3.4获取sku
+			TbItemExample tbItemExample=new TbItemExample();
+			Criteria criteria=tbItemExample.createCriteria();
+			criteria.andGoodsIdEqualTo(goodsId);
+			criteria.andStatusEqualTo("1");
+			tbItemExample.setOrderByClause("is_default desc");
+			
+			List<TbItem> itemList  = tbItemMapper.selectByExample(tbItemExample);
+			dataModel.put("itemList", itemList);//妈的，key多了个空格，在ftl模板中取不出值，艹！
+			
 			//4.输出流
 			writer = new FileWriter(pagedir+goodsId+".html");
 			//5.输出和关闭流
