@@ -1,5 +1,6 @@
 package com.pinyougou.page.service.impl;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
@@ -9,10 +10,10 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.view.freemarker.FreeMarkerConfig;
 import org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer;
 
-import com.alibaba.dubbo.config.annotation.Service;
 import com.pinyougou.mapper.TbGoodsDescMapper;
 import com.pinyougou.mapper.TbGoodsMapper;
 import com.pinyougou.mapper.TbItemCatMapper;
@@ -117,6 +118,24 @@ public class ItemPageServiceImpl implements ItemPageService {
 		}
 
 		return false;
+	}
+	
+	/**
+	 * 功能：
+	 * 1.删除商品详情页；
+	 */
+	@Override
+	public boolean deleteItemHtml(Long[] goodsIds) {
+		try {
+			for(Long goodsId:goodsIds) {
+			boolean b= new File(pagedir+goodsId+".html").delete();
+			}
+		return true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+
 	}
 
 }
