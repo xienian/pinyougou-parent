@@ -105,15 +105,22 @@
 		<version>0.0.5-SNAPSHOT</version>
 	</dependency>
 
-	<dependency>
+<!-- 没用JMS之前，使用接口获取dubbo生产者对象，现在使用JMS，所有去掉此接口 -->
+<!-- 	<dependency>
 		<groupId>com.pinyougou</groupId>
 		<artifactId>pinyougou-search-interface</artifactId>
 		<version>0.0.5-SNAPSHOT</version>
-	</dependency>
-	<dependency>
+	</dependency> -->
+	<!-- 使用消息队列通信后，就不需要dubbo服务了 -->
+<!-- 	<dependency>
 		<groupId>com.pinyougou</groupId>
 		<artifactId>pinyougou-page-interface</artifactId>
 		<version>0.0.5-SNAPSHOT</version>
+	</dependency> -->
+	<dependency>
+		<groupId>org.apache.activemq</groupId>
+		<artifactId>activemq-client</artifactId>
+		<version>5.13.4</version>
 	</dependency>
    </dependencies>
   

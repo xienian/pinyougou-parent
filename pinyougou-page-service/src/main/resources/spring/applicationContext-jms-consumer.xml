@@ -31,15 +31,15 @@
 	
 	
 	<!--这个是主题目的    删除页面-->  
-<!-- 	<bean id="topicPageDeleteDestination" class="org.apache.activemq.command.ActiveMQTopic">  
+	<bean id="topicPageDeleteDestination" class="org.apache.activemq.command.ActiveMQTopic">  
 	    <constructor-arg value="pinyougou_topic_page_delete"/>  
-	</bean>     -->
+	</bean>    
 	
 	<!-- 消息监听容器   生成页面 -->
-<!-- 	<bean class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+	<bean class="org.springframework.jms.listener.DefaultMessageListenerContainer">
 		<property name="connectionFactory" ref="connectionFactory" />
 		<property name="destination" ref="topicPageDeleteDestination" />
 		<property name="messageListener" ref="pageDeleteListener" />
-	</bean> -->
+	</bean>
 	
 </beans>
