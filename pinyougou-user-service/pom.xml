@@ -8,9 +8,9 @@
   <artifactId>pinyougou-user-service</artifactId>
   <packaging>war</packaging>
   
-  <dependencies>
-
-  	 		<!-- Spring -->
+   <dependencies>
+  
+  		<!-- Spring -->
 	<dependency>
 		<groupId>org.springframework</groupId>
 		<artifactId>spring-context</artifactId>		
@@ -77,35 +77,32 @@
 		<artifactId>servlet-api</artifactId>		
 		<scope>provided</scope>
 	</dependency>
- 	
- 	<!-- 项目依赖 -->
- 	 <dependency>
-  		<groupId>com.pinyougou</groupId>
-  		<artifactId>pinyougou-user-interface</artifactId>
-  		<version>0.0.5-SNAPSHOT</version>
-  	</dependency>
 
- 	 <dependency>
- 	 	<groupId>org.freemarker</groupId>
- 	 	<artifactId>freemarker</artifactId>
- 	 </dependency>
- 	 <dependency>
- 	 	<groupId>com.pinyougou</groupId>
- 	 	<artifactId>pinyougou-dao</artifactId>
- 	 	<version>0.0.5-SNAPSHOT</version>
- 	 </dependency>
- 	 <dependency>
- 	 	<groupId>org.apache.activemq</groupId>
- 	 	<artifactId>activemq-client</artifactId>
- 	 	<version>5.13.4</version>
- 	 </dependency>
- 	 <dependency>
- 	 	<groupId>org.springframework.data</groupId>
- 	 	<artifactId>spring-data-redis</artifactId>
- 	 </dependency>
-  </dependencies>
+	<dependency>
+		<groupId>com.pinyougou</groupId>
+		<artifactId>pinyougou-dao</artifactId>
+		<version>0.0.5-SNAPSHOT</version>
+	</dependency>
+	<dependency>
+		<groupId>com.pinyougou</groupId>
+		<artifactId>pinyougou-user-interface</artifactId>
+		<version>0.0.5-SNAPSHOT</version>
+	</dependency>
+	<dependency>
+		<groupId>com.pinyougou</groupId>
+		<artifactId>pinyougou-common</artifactId>
+		<version>0.0.5-SNAPSHOT</version>
+	</dependency>
+	
+	<dependency>
+		<groupId>org.apache.activemq</groupId>
+		<artifactId>activemq-client</artifactId>
+		<version>5.13.4</version>
+	</dependency>
+	
+   </dependencies>
   
-   <build>  
+  <build>  
 	  <plugins>	     
 	      <plugin>
 				<groupId>org.apache.tomcat.maven</groupId>

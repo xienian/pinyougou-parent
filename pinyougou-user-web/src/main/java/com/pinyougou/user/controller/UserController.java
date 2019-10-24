@@ -1,6 +1,9 @@
 package com.pinyougou.user.controller;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,6 +25,8 @@ public class UserController {
 
 	@Reference
 	private UserService userService;
+	
+
 	
 	/**
 	 * 返回全部列表
