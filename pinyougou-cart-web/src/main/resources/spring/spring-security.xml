@@ -4,12 +4,13 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 						http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
 	<!-- 不需要拦截的地址 -->
-	<http pattern="/cas/**" security="none"></http>
+	<http pattern="/css/**" security="none"></http>
 	<http pattern="/img/**" security="none"></http>
 	<http pattern="/js/**" security="none"></http>
 	<http pattern="/plugins/**" security="none"></http>
 	
 	<http pattern="/cart.html" security="none"></http>
+	<http pattern="/cart/*.do" security="none"></http>
 
 	
 	
