@@ -1,5 +1,5 @@
 
-app.controller('itemController',function($scope){
+app.controller('itemController',function($scope,$http){
 /*
 购买商品数量增删函数
 */
@@ -81,7 +81,16 @@ searchSku=function(){
 //添加商品到购物车：开始
 	//添加商品到购物车
 	$scope.addToCart=function(){
-		alert('skuid:'+$scope.sku.id);				
+		//1.将sku加入购物车，提交cookie
+		$http.get("http://localhost:9107/cart/addGoodsToCartList.do?itemId="+$scope.sku.id+"&num="+$scope.num,{'withCredentials':true}).success(function(response){
+			//2.跳转到购物车页面
+			if(response.success){
+				location.href="http://localhost:9107/cart.html";
+			}else{
+				alert(response.message);
+			}
+		})
+		
 	}
 
 //添加商品到购物车：结束
