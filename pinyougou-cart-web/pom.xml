@@ -105,7 +105,7 @@
 		<scope>provided</scope>
 	</dependency>
 
-
+<!-- 子项目依赖 -->
 	<dependency>
 		<groupId>com.pinyougou</groupId>
 		<artifactId>pinyougou-common</artifactId>
@@ -116,7 +116,22 @@
 		<artifactId>pinyougou-cart-interface</artifactId>
 		<version>0.0.5-SNAPSHOT</version>
 	</dependency>
-     </dependencies>
+	<dependency>
+		<groupId>com.pinyougou</groupId>
+		<artifactId>pinyougou-user-interface</artifactId>
+		<version>0.0.5-SNAPSHOT</version>
+	</dependency>
+	<dependency>
+		<groupId>com.pinyougou</groupId>
+		<artifactId>pinyougou-order-interface</artifactId>
+		<version>0.0.5-SNAPSHOT</version>
+	</dependency>
+	<dependency>
+		<groupId>com.pinyougou</groupId>
+		<artifactId>pinyougou-pay-interface</artifactId>
+		<version>0.0.5-SNAPSHOT</version>
+	</dependency>
+ </dependencies>
   
   
     <build>  

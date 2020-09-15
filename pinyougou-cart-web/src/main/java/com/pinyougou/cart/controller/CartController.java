@@ -32,7 +32,7 @@ public class CartController {
 	private HttpServletResponse response;
 
 	@RequestMapping("/addGoodsToCartList")
-	@CrossOrigin(origins="http://localhost:9105",allowCredentials="true")
+	@CrossOrigin(origins= {"http://localhost:9105"},allowCredentials="true")
 	public Result addGoodsToCartList(Long itemId,Integer num) {
 		String username = SecurityContextHolder.getContext().getAuthentication().getName(); 
 		System.out.println("当前登录用户："+username);

@@ -26,4 +26,24 @@ app.service('cartService',function($http){
 		
 	}
 	
+	//获取当前用户全部收货地址
+	this.findAddressList=function(){
+		return $http.get("address/findListByLoginUser.do");
+	}
+	
+	//保存地址对象
+	this.saveAddress=function(updateAddress){
+		return $http.post("address/saveAddress.do",updateAddress);
+	}
+	
+	//删除地址对象
+	this.deleteAddress=function(address){
+		return $http.get("address/deleteAddress.do?addressId="+address.id);
+	}
+	
+	
+	//保存订单
+	this.submitOrder=function(order){
+		return $http.post("order/add.do",order);
+	}
 });

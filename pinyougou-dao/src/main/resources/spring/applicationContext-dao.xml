@@ -31,6 +31,7 @@
 		<!-- 数据库连接池 -->
 		<property name="dataSource" ref="dataSource" />
 		<!-- 加载mybatis的全局配置文件 -->
+		<!-- 例如分页拦截器PageHelper -->
 		<property name="configLocation" value="classpath:mybatis/SqlMapConfig.xml" />
 	</bean>
 	<!-- mybatis接口映射配置 -->

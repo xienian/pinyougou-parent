@@ -138,7 +138,7 @@ public class CartServiceImpl implements CartService {
 	private RedisTemplate redisTemplate;
 	
 	@Override
-	public List<Cart> findCartListFromRedis(String username) {
+	public  List<Cart>  findCartListFromRedis(String username) {
 		/**
 		 * 1.从Redis缓存中，根据username，获取购物车对象；
 		 * 2.返回

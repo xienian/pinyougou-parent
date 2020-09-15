@@ -29,7 +29,8 @@ public class BrandController {
 	 * @return
 	 */
 	@RequestMapping("/findAll")
-	public List<TbBrand> findAll(){			
+	public List<TbBrand> findAll(){		
+
 		return brandService.findAll();
 	}
 	
@@ -39,7 +40,8 @@ public class BrandController {
 	 * @return
 	 */
 	@RequestMapping("/findPage")
-	public PageResult  findPage(int page,int rows){			
+	public PageResult  findPage(int page,int rows){		
+		
 		return brandService.findPage(page, rows);
 	}
 	
@@ -110,6 +112,7 @@ public class BrandController {
 	 */
 	@RequestMapping("/search")
 	public PageResult search(@RequestBody TbBrand brand, int page, int rows,@RequestParam(value="test1",required=false,defaultValue="1") int test1,String test2,TbBrand test3){
+		
 		return brandService.findPage(brand, page, rows);		
 	}
 	
