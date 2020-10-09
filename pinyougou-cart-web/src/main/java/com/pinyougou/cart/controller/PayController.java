@@ -1,12 +1,18 @@
 package com.pinyougou.cart.controller;
 
+import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.alibaba.dubbo.config.annotation.Reference;
+import com.pinyougou.order.service.OrderService;
 import com.pinyougou.pay.service.WeixinPayService;
+import com.pinyougou.pojo.TbPayLog;
 
 import entity.Result;
 import util.IdWorker;
@@ -24,6 +30,9 @@ public class PayController {
 	@Reference
 	private WeixinPayService weixinPayService;
 	
+	@Autowired
+	private OrderService orderService;
+	
 	/**
 	 * 功能：
 	 * 1.目前写死功能；
@@ -33,11 +42,17 @@ public class PayController {
 	@RequestMapping("/weixinPayNative")
 	public Map weixinPayNative() {
 		//查询订单信息
-		//调用weixinPayService的微信扫码下单功能，传参
-		IdWorker idWorker=new IdWorker();
-		Map<String, String> map = weixinPayService.createNative("1415757673sdsfsafsfs", "1");
-		//返回数据
-		return map;
+		String userId = SecurityContextHolder.getContext().getAuthentication().getName();
+		
+		TbPayLog payLog= orderService.searchPayLogFromRedis(userId);
+		
+		if(payLog!=null) {
+			Map<String, String> map = weixinPayService.createNative(payLog.getOutTradeNo(), payLog.getTotalFee()+"");
+			return map;
+		}else {
+			return new HashMap();
+		}
+		
 	}
 	
 	@RequestMapping("/queryWeixinPayNative")
@@ -47,7 +62,7 @@ public class PayController {
 		//查询次数<=100
 		int times=0;
 		while(true) {
-			if(times++>=10) {
+			if(times++>=100) {
 				result=new  Result(false, "二维码超时");
 				break;
 
@@ -61,11 +76,13 @@ public class PayController {
 			
 			if(queryWeixinNativePayStatus.get("trade_state").equals("success")) {
 				result=new  Result(true, "支付成功");
+				//修改订单状态
+				orderService.updateOrderStatus(out_trade_no, queryWeixinNativePayStatus.get("transaction_id"));
 				break;
 			}
 			
 			try {
-				Thread.sleep(10000);
+				Thread.sleep(3000);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

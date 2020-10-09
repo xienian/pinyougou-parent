@@ -245,5 +245,41 @@ public class OrderServiceImpl implements OrderService {
 		Page<TbOrder> page= (Page<TbOrder>)orderMapper.selectByExample(example);		
 		return new PageResult(page.getTotal(), page.getResult());
 	}
+		
+		//从Redis查询支付日志
+		@Override
+		public TbPayLog searchPayLogFromRedis(String userId) {
+			TbPayLog payLog= (TbPayLog) redisTemplate.boundHashOps("payLog").get(userId);
+			return payLog;
+		}
+
+		//修改订单支付状态
+		@Override
+		public void updateOrderStatus(String out_trade_no, String transaction_id) {
+			//获取相应的支付日志对象
+			TbPayLog payLog = tbPayLogMapper.selectByPrimaryKey(out_trade_no);
+			//修改某些字段
+			payLog.setPayTime(new Date());
+			payLog.setTransactionId(transaction_id);
+			payLog.setTradeState("1");
+
+			//根据订单列表获取订单对象，并修改支付状态
+			String orderList=payLog.getOrderList();
+			String[] orders = orderList.split(",.");
+			
+			for (String order : orders) {
+				TbOrder tbOrder = orderMapper.selectByPrimaryKey((long) Integer.parseInt(order));
+				if (tbOrder!=null) {
+					tbOrder.setStatus("2");
+					orderMapper.updateByPrimaryKey(tbOrder);
+				}				
+			}
+			
+			tbPayLogMapper.updateByPrimaryKey(payLog);
+			
+			//清除Redis中支付日志
+			redisTemplate.boundHashOps("payLog").delete(payLog.getUserId());
+			
+		}
 	
 }
