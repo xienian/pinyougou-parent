@@ -7,6 +7,25 @@
   </parent>
   <artifactId>pinyougou-search-service</artifactId>
   <packaging>war</packaging>
+  
+  <properties>
+  	<env>dev</env>
+  </properties>
+  
+  <profiles>
+  	<profile>
+  		<id>dev</id>
+  		<properties>
+  			<env>dev</env>
+  		</properties>
+  	</profile>
+  	<profile>
+  		<id>pro</id>
+  		<properties>
+  			<env>pro</env>
+  		</properties>
+  	</profile>
+  </profiles>
   <dependencies>
   		<!-- Spring -->
 	<dependency>
@@ -101,7 +120,16 @@
   </dependencies>
   
   
-   <build>  
+   <build> 
+   <filters>
+   	<filter>src/main/resources/filters/solrAddress_${env}.properties</filter>
+   </filters>
+    <resources>
+    	<resource>
+			<directory>src/main/resources</directory>
+			<filtering>true</filtering>
+		</resource>
+    </resources>
 	  <plugins>	     
 	      <plugin>
 				<groupId>org.apache.tomcat.maven</groupId>

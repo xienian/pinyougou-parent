@@ -1,45 +1,46 @@
+
 package com.pinyougou.pojo;
 
 import java.io.Serializable;
+public class TbSpecificationOption implements Serializable {
+  private Long id;
 
-public class TbSpecificationOption implements Serializable{
-    private Long id;
+  private String optionName;
 
-    private String optionName;
+  private Long specId;
 
-    private Long specId;
+  private Integer orders;
 
-    private Integer orders;
-
-    public Long getId() {
+  public Long getId() {
         return id;
-    }
+  }
 
-    public void setId(Long id) {
+  public void setId(Long id) {
         this.id = id;
-    }
+  }
 
-    public String getOptionName() {
+  public String getOptionName() {
         return optionName;
-    }
+  }
 
-    public void setOptionName(String optionName) {
+  public void setOptionName(String optionName) {
         this.optionName = optionName == null ? null : optionName.trim();
-    }
+  }
 
-    public Long getSpecId() {
+  public Long getSpecId() {
         return specId;
-    }
+  }
 
-    public void setSpecId(Long specId) {
+  public void setSpecId(Long specId) {
         this.specId = specId;
-    }
+  }
 
-    public Integer getOrders() {
+  public Integer getOrders() {
         return orders;
-    }
+  }
 
-    public void setOrders(Integer orders) {
+  public void setOrders(Integer orders) {
         this.orders = orders;
-    }
+  }
+
 }

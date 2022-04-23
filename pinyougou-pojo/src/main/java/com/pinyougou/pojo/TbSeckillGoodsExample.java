@@ -1,1186 +1,1187 @@
+
 package com.pinyougou.pojo;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
 public class TbSeckillGoodsExample {
-    protected String orderByClause;
+  protected String orderByClause;
 
-    protected boolean distinct;
+  protected boolean distinct;
 
-    protected List<Criteria> oredCriteria;
+  public static class Criteria extends TbSeckillGoodsExample.GeneratedCriteria {
+    protected Criteria() {
+            super();
+    }
 
-    public TbSeckillGoodsExample() {
+  }
+
+  protected List<TbSeckillGoodsExample.Criteria> oredCriteria;
+
+  public TbSeckillGoodsExample() {
         oredCriteria = new ArrayList<Criteria>();
-    }
+  }
 
-    public void setOrderByClause(String orderByClause) {
+  public void setOrderByClause(String orderByClause) {
         this.orderByClause = orderByClause;
-    }
+  }
 
-    public String getOrderByClause() {
+  public String getOrderByClause() {
         return orderByClause;
-    }
+  }
 
-    public void setDistinct(boolean distinct) {
+  public void setDistinct(boolean distinct) {
         this.distinct = distinct;
-    }
+  }
 
-    public boolean isDistinct() {
+  public boolean isDistinct() {
         return distinct;
-    }
+  }
 
-    public List<Criteria> getOredCriteria() {
+  public List<TbSeckillGoodsExample.Criteria> getOredCriteria() {
         return oredCriteria;
-    }
+  }
 
-    public void or(Criteria criteria) {
+  public void or(TbSeckillGoodsExample.Criteria criteria) {
         oredCriteria.add(criteria);
-    }
+  }
 
-    public Criteria or() {
+  public TbSeckillGoodsExample.Criteria or() {
         Criteria criteria = createCriteriaInternal();
         oredCriteria.add(criteria);
         return criteria;
-    }
+  }
 
-    public Criteria createCriteria() {
+  public TbSeckillGoodsExample.Criteria createCriteria() {
         Criteria criteria = createCriteriaInternal();
         if (oredCriteria.size() == 0) {
             oredCriteria.add(criteria);
         }
         return criteria;
-    }
+  }
 
-    protected Criteria createCriteriaInternal() {
+  protected TbSeckillGoodsExample.Criteria createCriteriaInternal() {
         Criteria criteria = new Criteria();
         return criteria;
-    }
+  }
 
-    public void clear() {
+  public void clear() {
         oredCriteria.clear();
         orderByClause = null;
         distinct = false;
-    }
+  }
 
-    protected abstract static class GeneratedCriteria {
-        protected List<Criterion> criteria;
+  protected static abstract class GeneratedCriteria {
+    protected List<TbSeckillGoodsExample.Criterion> criteria;
 
-        protected GeneratedCriteria() {
+    protected GeneratedCriteria() {
             super();
             criteria = new ArrayList<Criterion>();
-        }
+    }
 
-        public boolean isValid() {
+    public boolean isValid() {
             return criteria.size() > 0;
-        }
+    }
 
-        public List<Criterion> getAllCriteria() {
+    public List<TbSeckillGoodsExample.Criterion> getAllCriteria() {
             return criteria;
-        }
+    }
 
-        public List<Criterion> getCriteria() {
+    public List<TbSeckillGoodsExample.Criterion> getCriteria() {
             return criteria;
-        }
+    }
 
-        protected void addCriterion(String condition) {
+    protected void addCriterion(String condition) {
             if (condition == null) {
                 throw new RuntimeException("Value for condition cannot be null");
             }
             criteria.add(new Criterion(condition));
-        }
+    }
 
-        protected void addCriterion(String condition, Object value, String property) {
+    protected void addCriterion(String condition, Object value, String property) {
             if (value == null) {
                 throw new RuntimeException("Value for " + property + " cannot be null");
             }
             criteria.add(new Criterion(condition, value));
-        }
+    }
 
-        protected void addCriterion(String condition, Object value1, Object value2, String property) {
+    protected void addCriterion(String condition, Object value1, Object value2, String property) {
             if (value1 == null || value2 == null) {
                 throw new RuntimeException("Between values for " + property + " cannot be null");
             }
             criteria.add(new Criterion(condition, value1, value2));
-        }
+    }
 
-        public Criteria andIdIsNull() {
+    public TbSeckillGoodsExample.Criteria andIdIsNull() {
             addCriterion("id is null");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andIdIsNotNull() {
+    public TbSeckillGoodsExample.Criteria andIdIsNotNull() {
             addCriterion("id is not null");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andIdEqualTo(Long value) {
+    public TbSeckillGoodsExample.Criteria andIdEqualTo(Long value) {
             addCriterion("id =", value, "id");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andIdNotEqualTo(Long value) {
+    public TbSeckillGoodsExample.Criteria andIdNotEqualTo(Long value) {
             addCriterion("id <>", value, "id");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andIdGreaterThan(Long value) {
+    public TbSeckillGoodsExample.Criteria andIdGreaterThan(Long value) {
             addCriterion("id >", value, "id");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andIdGreaterThanOrEqualTo(Long value) {
+    public TbSeckillGoodsExample.Criteria andIdGreaterThanOrEqualTo(Long value) {
             addCriterion("id >=", value, "id");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andIdLessThan(Long value) {
+    public TbSeckillGoodsExample.Criteria andIdLessThan(Long value) {
             addCriterion("id <", value, "id");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andIdLessThanOrEqualTo(Long value) {
+    public TbSeckillGoodsExample.Criteria andIdLessThanOrEqualTo(Long value) {
             addCriterion("id <=", value, "id");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andIdIn(List<Long> values) {
+    public TbSeckillGoodsExample.Criteria andIdIn(List<Long> values) {
             addCriterion("id in", values, "id");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andIdNotIn(List<Long> values) {
+    public TbSeckillGoodsExample.Criteria andIdNotIn(List<Long> values) {
             addCriterion("id not in", values, "id");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andIdBetween(Long value1, Long value2) {
+    public TbSeckillGoodsExample.Criteria andIdBetween(Long value1, Long value2) {
             addCriterion("id between", value1, value2, "id");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andIdNotBetween(Long value1, Long value2) {
+    public TbSeckillGoodsExample.Criteria andIdNotBetween(Long value1, Long value2) {
             addCriterion("id not between", value1, value2, "id");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andGoodsIdIsNull() {
+    public TbSeckillGoodsExample.Criteria andGoodsIdIsNull() {
             addCriterion("goods_id is null");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andGoodsIdIsNotNull() {
+    public TbSeckillGoodsExample.Criteria andGoodsIdIsNotNull() {
             addCriterion("goods_id is not null");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andGoodsIdEqualTo(Long value) {
+    public TbSeckillGoodsExample.Criteria andGoodsIdEqualTo(Long value) {
             addCriterion("goods_id =", value, "goodsId");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andGoodsIdNotEqualTo(Long value) {
+    public TbSeckillGoodsExample.Criteria andGoodsIdNotEqualTo(Long value) {
             addCriterion("goods_id <>", value, "goodsId");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andGoodsIdGreaterThan(Long value) {
+    public TbSeckillGoodsExample.Criteria andGoodsIdGreaterThan(Long value) {
             addCriterion("goods_id >", value, "goodsId");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andGoodsIdGreaterThanOrEqualTo(Long value) {
+    public TbSeckillGoodsExample.Criteria andGoodsIdGreaterThanOrEqualTo(Long value) {
             addCriterion("goods_id >=", value, "goodsId");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andGoodsIdLessThan(Long value) {
+    public TbSeckillGoodsExample.Criteria andGoodsIdLessThan(Long value) {
             addCriterion("goods_id <", value, "goodsId");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andGoodsIdLessThanOrEqualTo(Long value) {
+    public TbSeckillGoodsExample.Criteria andGoodsIdLessThanOrEqualTo(Long value) {
             addCriterion("goods_id <=", value, "goodsId");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andGoodsIdIn(List<Long> values) {
+    public TbSeckillGoodsExample.Criteria andGoodsIdIn(List<Long> values) {
             addCriterion("goods_id in", values, "goodsId");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andGoodsIdNotIn(List<Long> values) {
+    public TbSeckillGoodsExample.Criteria andGoodsIdNotIn(List<Long> values) {
             addCriterion("goods_id not in", values, "goodsId");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andGoodsIdBetween(Long value1, Long value2) {
+    public TbSeckillGoodsExample.Criteria andGoodsIdBetween(Long value1, Long value2) {
             addCriterion("goods_id between", value1, value2, "goodsId");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andGoodsIdNotBetween(Long value1, Long value2) {
+    public TbSeckillGoodsExample.Criteria andGoodsIdNotBetween(Long value1, Long value2) {
             addCriterion("goods_id not between", value1, value2, "goodsId");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andItemIdIsNull() {
+    public TbSeckillGoodsExample.Criteria andItemIdIsNull() {
             addCriterion("item_id is null");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andItemIdIsNotNull() {
+    public TbSeckillGoodsExample.Criteria andItemIdIsNotNull() {
             addCriterion("item_id is not null");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andItemIdEqualTo(Long value) {
+    public TbSeckillGoodsExample.Criteria andItemIdEqualTo(Long value) {
             addCriterion("item_id =", value, "itemId");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andItemIdNotEqualTo(Long value) {
+    public TbSeckillGoodsExample.Criteria andItemIdNotEqualTo(Long value) {
             addCriterion("item_id <>", value, "itemId");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andItemIdGreaterThan(Long value) {
+    public TbSeckillGoodsExample.Criteria andItemIdGreaterThan(Long value) {
             addCriterion("item_id >", value, "itemId");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andItemIdGreaterThanOrEqualTo(Long value) {
+    public TbSeckillGoodsExample.Criteria andItemIdGreaterThanOrEqualTo(Long value) {
             addCriterion("item_id >=", value, "itemId");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andItemIdLessThan(Long value) {
+    public TbSeckillGoodsExample.Criteria andItemIdLessThan(Long value) {
             addCriterion("item_id <", value, "itemId");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andItemIdLessThanOrEqualTo(Long value) {
+    public TbSeckillGoodsExample.Criteria andItemIdLessThanOrEqualTo(Long value) {
             addCriterion("item_id <=", value, "itemId");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andItemIdIn(List<Long> values) {
+    public TbSeckillGoodsExample.Criteria andItemIdIn(List<Long> values) {
             addCriterion("item_id in", values, "itemId");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andItemIdNotIn(List<Long> values) {
+    public TbSeckillGoodsExample.Criteria andItemIdNotIn(List<Long> values) {
             addCriterion("item_id not in", values, "itemId");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andItemIdBetween(Long value1, Long value2) {
+    public TbSeckillGoodsExample.Criteria andItemIdBetween(Long value1, Long value2) {
             addCriterion("item_id between", value1, value2, "itemId");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andItemIdNotBetween(Long value1, Long value2) {
+    public TbSeckillGoodsExample.Criteria andItemIdNotBetween(Long value1, Long value2) {
             addCriterion("item_id not between", value1, value2, "itemId");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andTitleIsNull() {
+    public TbSeckillGoodsExample.Criteria andTitleIsNull() {
             addCriterion("title is null");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andTitleIsNotNull() {
+    public TbSeckillGoodsExample.Criteria andTitleIsNotNull() {
             addCriterion("title is not null");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andTitleEqualTo(String value) {
+    public TbSeckillGoodsExample.Criteria andTitleEqualTo(String value) {
             addCriterion("title =", value, "title");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andTitleNotEqualTo(String value) {
+    public TbSeckillGoodsExample.Criteria andTitleNotEqualTo(String value) {
             addCriterion("title <>", value, "title");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andTitleGreaterThan(String value) {
+    public TbSeckillGoodsExample.Criteria andTitleGreaterThan(String value) {
             addCriterion("title >", value, "title");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andTitleGreaterThanOrEqualTo(String value) {
+    public TbSeckillGoodsExample.Criteria andTitleGreaterThanOrEqualTo(String value) {
             addCriterion("title >=", value, "title");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andTitleLessThan(String value) {
+    public TbSeckillGoodsExample.Criteria andTitleLessThan(String value) {
             addCriterion("title <", value, "title");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andTitleLessThanOrEqualTo(String value) {
+    public TbSeckillGoodsExample.Criteria andTitleLessThanOrEqualTo(String value) {
             addCriterion("title <=", value, "title");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andTitleLike(String value) {
+    public TbSeckillGoodsExample.Criteria andTitleLike(String value) {
             addCriterion("title like", value, "title");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andTitleNotLike(String value) {
+    public TbSeckillGoodsExample.Criteria andTitleNotLike(String value) {
             addCriterion("title not like", value, "title");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andTitleIn(List<String> values) {
+    public TbSeckillGoodsExample.Criteria andTitleIn(List<String> values) {
             addCriterion("title in", values, "title");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andTitleNotIn(List<String> values) {
+    public TbSeckillGoodsExample.Criteria andTitleNotIn(List<String> values) {
             addCriterion("title not in", values, "title");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andTitleBetween(String value1, String value2) {
+    public TbSeckillGoodsExample.Criteria andTitleBetween(String value1, String value2) {
             addCriterion("title between", value1, value2, "title");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andTitleNotBetween(String value1, String value2) {
+    public TbSeckillGoodsExample.Criteria andTitleNotBetween(String value1, String value2) {
             addCriterion("title not between", value1, value2, "title");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andSmallPicIsNull() {
+    public TbSeckillGoodsExample.Criteria andSmallPicIsNull() {
             addCriterion("small_pic is null");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andSmallPicIsNotNull() {
+    public TbSeckillGoodsExample.Criteria andSmallPicIsNotNull() {
             addCriterion("small_pic is not null");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andSmallPicEqualTo(String value) {
+    public TbSeckillGoodsExample.Criteria andSmallPicEqualTo(String value) {
             addCriterion("small_pic =", value, "smallPic");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andSmallPicNotEqualTo(String value) {
+    public TbSeckillGoodsExample.Criteria andSmallPicNotEqualTo(String value) {
             addCriterion("small_pic <>", value, "smallPic");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andSmallPicGreaterThan(String value) {
+    public TbSeckillGoodsExample.Criteria andSmallPicGreaterThan(String value) {
             addCriterion("small_pic >", value, "smallPic");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andSmallPicGreaterThanOrEqualTo(String value) {
+    public TbSeckillGoodsExample.Criteria andSmallPicGreaterThanOrEqualTo(String value) {
             addCriterion("small_pic >=", value, "smallPic");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andSmallPicLessThan(String value) {
+    public TbSeckillGoodsExample.Criteria andSmallPicLessThan(String value) {
             addCriterion("small_pic <", value, "smallPic");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andSmallPicLessThanOrEqualTo(String value) {
+    public TbSeckillGoodsExample.Criteria andSmallPicLessThanOrEqualTo(String value) {
             addCriterion("small_pic <=", value, "smallPic");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andSmallPicLike(String value) {
+    public TbSeckillGoodsExample.Criteria andSmallPicLike(String value) {
             addCriterion("small_pic like", value, "smallPic");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andSmallPicNotLike(String value) {
+    public TbSeckillGoodsExample.Criteria andSmallPicNotLike(String value) {
             addCriterion("small_pic not like", value, "smallPic");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andSmallPicIn(List<String> values) {
+    public TbSeckillGoodsExample.Criteria andSmallPicIn(List<String> values) {
             addCriterion("small_pic in", values, "smallPic");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andSmallPicNotIn(List<String> values) {
+    public TbSeckillGoodsExample.Criteria andSmallPicNotIn(List<String> values) {
             addCriterion("small_pic not in", values, "smallPic");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andSmallPicBetween(String value1, String value2) {
+    public TbSeckillGoodsExample.Criteria andSmallPicBetween(String value1, String value2) {
             addCriterion("small_pic between", value1, value2, "smallPic");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andSmallPicNotBetween(String value1, String value2) {
+    public TbSeckillGoodsExample.Criteria andSmallPicNotBetween(String value1, String value2) {
             addCriterion("small_pic not between", value1, value2, "smallPic");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andPriceIsNull() {
+    public TbSeckillGoodsExample.Criteria andPriceIsNull() {
             addCriterion("price is null");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andPriceIsNotNull() {
+    public TbSeckillGoodsExample.Criteria andPriceIsNotNull() {
             addCriterion("price is not null");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andPriceEqualTo(BigDecimal value) {
+    public TbSeckillGoodsExample.Criteria andPriceEqualTo(BigDecimal value) {
             addCriterion("price =", value, "price");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andPriceNotEqualTo(BigDecimal value) {
+    public TbSeckillGoodsExample.Criteria andPriceNotEqualTo(BigDecimal value) {
             addCriterion("price <>", value, "price");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andPriceGreaterThan(BigDecimal value) {
+    public TbSeckillGoodsExample.Criteria andPriceGreaterThan(BigDecimal value) {
             addCriterion("price >", value, "price");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andPriceGreaterThanOrEqualTo(BigDecimal value) {
+    public TbSeckillGoodsExample.Criteria andPriceGreaterThanOrEqualTo(BigDecimal value) {
             addCriterion("price >=", value, "price");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andPriceLessThan(BigDecimal value) {
+    public TbSeckillGoodsExample.Criteria andPriceLessThan(BigDecimal value) {
             addCriterion("price <", value, "price");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andPriceLessThanOrEqualTo(BigDecimal value) {
+    public TbSeckillGoodsExample.Criteria andPriceLessThanOrEqualTo(BigDecimal value) {
             addCriterion("price <=", value, "price");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andPriceIn(List<BigDecimal> values) {
+    public TbSeckillGoodsExample.Criteria andPriceIn(List<BigDecimal> values) {
             addCriterion("price in", values, "price");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andPriceNotIn(List<BigDecimal> values) {
+    public TbSeckillGoodsExample.Criteria andPriceNotIn(List<BigDecimal> values) {
             addCriterion("price not in", values, "price");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andPriceBetween(BigDecimal value1, BigDecimal value2) {
+    public TbSeckillGoodsExample.Criteria andPriceBetween(BigDecimal value1, BigDecimal value2) {
             addCriterion("price between", value1, value2, "price");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andPriceNotBetween(BigDecimal value1, BigDecimal value2) {
+    public TbSeckillGoodsExample.Criteria andPriceNotBetween(BigDecimal value1, BigDecimal value2) {
             addCriterion("price not between", value1, value2, "price");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andCostPriceIsNull() {
+    public TbSeckillGoodsExample.Criteria andCostPriceIsNull() {
             addCriterion("cost_price is null");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andCostPriceIsNotNull() {
+    public TbSeckillGoodsExample.Criteria andCostPriceIsNotNull() {
             addCriterion("cost_price is not null");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andCostPriceEqualTo(BigDecimal value) {
+    public TbSeckillGoodsExample.Criteria andCostPriceEqualTo(BigDecimal value) {
             addCriterion("cost_price =", value, "costPrice");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andCostPriceNotEqualTo(BigDecimal value) {
+    public TbSeckillGoodsExample.Criteria andCostPriceNotEqualTo(BigDecimal value) {
             addCriterion("cost_price <>", value, "costPrice");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andCostPriceGreaterThan(BigDecimal value) {
+    public TbSeckillGoodsExample.Criteria andCostPriceGreaterThan(BigDecimal value) {
             addCriterion("cost_price >", value, "costPrice");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andCostPriceGreaterThanOrEqualTo(BigDecimal value) {
+    public TbSeckillGoodsExample.Criteria andCostPriceGreaterThanOrEqualTo(BigDecimal value) {
             addCriterion("cost_price >=", value, "costPrice");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andCostPriceLessThan(BigDecimal value) {
+    public TbSeckillGoodsExample.Criteria andCostPriceLessThan(BigDecimal value) {
             addCriterion("cost_price <", value, "costPrice");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andCostPriceLessThanOrEqualTo(BigDecimal value) {
+    public TbSeckillGoodsExample.Criteria andCostPriceLessThanOrEqualTo(BigDecimal value) {
             addCriterion("cost_price <=", value, "costPrice");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andCostPriceIn(List<BigDecimal> values) {
+    public TbSeckillGoodsExample.Criteria andCostPriceIn(List<BigDecimal> values) {
             addCriterion("cost_price in", values, "costPrice");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andCostPriceNotIn(List<BigDecimal> values) {
+    public TbSeckillGoodsExample.Criteria andCostPriceNotIn(List<BigDecimal> values) {
             addCriterion("cost_price not in", values, "costPrice");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andCostPriceBetween(BigDecimal value1, BigDecimal value2) {
+    public TbSeckillGoodsExample.Criteria andCostPriceBetween(BigDecimal value1, BigDecimal value2) {
             addCriterion("cost_price between", value1, value2, "costPrice");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andCostPriceNotBetween(BigDecimal value1, BigDecimal value2) {
+    public TbSeckillGoodsExample.Criteria andCostPriceNotBetween(BigDecimal value1, BigDecimal value2) {
             addCriterion("cost_price not between", value1, value2, "costPrice");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andSellerIdIsNull() {
+    public TbSeckillGoodsExample.Criteria andSellerIdIsNull() {
             addCriterion("seller_id is null");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andSellerIdIsNotNull() {
+    public TbSeckillGoodsExample.Criteria andSellerIdIsNotNull() {
             addCriterion("seller_id is not null");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andSellerIdEqualTo(String value) {
+    public TbSeckillGoodsExample.Criteria andSellerIdEqualTo(String value) {
             addCriterion("seller_id =", value, "sellerId");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andSellerIdNotEqualTo(String value) {
+    public TbSeckillGoodsExample.Criteria andSellerIdNotEqualTo(String value) {
             addCriterion("seller_id <>", value, "sellerId");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andSellerIdGreaterThan(String value) {
+    public TbSeckillGoodsExample.Criteria andSellerIdGreaterThan(String value) {
             addCriterion("seller_id >", value, "sellerId");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andSellerIdGreaterThanOrEqualTo(String value) {
+    public TbSeckillGoodsExample.Criteria andSellerIdGreaterThanOrEqualTo(String value) {
             addCriterion("seller_id >=", value, "sellerId");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andSellerIdLessThan(String value) {
+    public TbSeckillGoodsExample.Criteria andSellerIdLessThan(String value) {
             addCriterion("seller_id <", value, "sellerId");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andSellerIdLessThanOrEqualTo(String value) {
+    public TbSeckillGoodsExample.Criteria andSellerIdLessThanOrEqualTo(String value) {
             addCriterion("seller_id <=", value, "sellerId");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andSellerIdLike(String value) {
+    public TbSeckillGoodsExample.Criteria andSellerIdLike(String value) {
             addCriterion("seller_id like", value, "sellerId");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andSellerIdNotLike(String value) {
+    public TbSeckillGoodsExample.Criteria andSellerIdNotLike(String value) {
             addCriterion("seller_id not like", value, "sellerId");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andSellerIdIn(List<String> values) {
+    public TbSeckillGoodsExample.Criteria andSellerIdIn(List<String> values) {
             addCriterion("seller_id in", values, "sellerId");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andSellerIdNotIn(List<String> values) {
+    public TbSeckillGoodsExample.Criteria andSellerIdNotIn(List<String> values) {
             addCriterion("seller_id not in", values, "sellerId");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andSellerIdBetween(String value1, String value2) {
+    public TbSeckillGoodsExample.Criteria andSellerIdBetween(String value1, String value2) {
             addCriterion("seller_id between", value1, value2, "sellerId");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andSellerIdNotBetween(String value1, String value2) {
+    public TbSeckillGoodsExample.Criteria andSellerIdNotBetween(String value1, String value2) {
             addCriterion("seller_id not between", value1, value2, "sellerId");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andCreateTimeIsNull() {
+    public TbSeckillGoodsExample.Criteria andCreateTimeIsNull() {
             addCriterion("create_time is null");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andCreateTimeIsNotNull() {
+    public TbSeckillGoodsExample.Criteria andCreateTimeIsNotNull() {
             addCriterion("create_time is not null");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andCreateTimeEqualTo(Date value) {
+    public TbSeckillGoodsExample.Criteria andCreateTimeEqualTo(Date value) {
             addCriterion("create_time =", value, "createTime");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andCreateTimeNotEqualTo(Date value) {
+    public TbSeckillGoodsExample.Criteria andCreateTimeNotEqualTo(Date value) {
             addCriterion("create_time <>", value, "createTime");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andCreateTimeGreaterThan(Date value) {
+    public TbSeckillGoodsExample.Criteria andCreateTimeGreaterThan(Date value) {
             addCriterion("create_time >", value, "createTime");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andCreateTimeGreaterThanOrEqualTo(Date value) {
+    public TbSeckillGoodsExample.Criteria andCreateTimeGreaterThanOrEqualTo(Date value) {
             addCriterion("create_time >=", value, "createTime");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andCreateTimeLessThan(Date value) {
+    public TbSeckillGoodsExample.Criteria andCreateTimeLessThan(Date value) {
             addCriterion("create_time <", value, "createTime");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andCreateTimeLessThanOrEqualTo(Date value) {
+    public TbSeckillGoodsExample.Criteria andCreateTimeLessThanOrEqualTo(Date value) {
             addCriterion("create_time <=", value, "createTime");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andCreateTimeIn(List<Date> values) {
+    public TbSeckillGoodsExample.Criteria andCreateTimeIn(List<Date> values) {
             addCriterion("create_time in", values, "createTime");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andCreateTimeNotIn(List<Date> values) {
+    public TbSeckillGoodsExample.Criteria andCreateTimeNotIn(List<Date> values) {
             addCriterion("create_time not in", values, "createTime");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andCreateTimeBetween(Date value1, Date value2) {
+    public TbSeckillGoodsExample.Criteria andCreateTimeBetween(Date value1, Date value2) {
             addCriterion("create_time between", value1, value2, "createTime");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andCreateTimeNotBetween(Date value1, Date value2) {
+    public TbSeckillGoodsExample.Criteria andCreateTimeNotBetween(Date value1, Date value2) {
             addCriterion("create_time not between", value1, value2, "createTime");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andCheckTimeIsNull() {
+    public TbSeckillGoodsExample.Criteria andCheckTimeIsNull() {
             addCriterion("check_time is null");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andCheckTimeIsNotNull() {
+    public TbSeckillGoodsExample.Criteria andCheckTimeIsNotNull() {
             addCriterion("check_time is not null");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andCheckTimeEqualTo(Date value) {
+    public TbSeckillGoodsExample.Criteria andCheckTimeEqualTo(Date value) {
             addCriterion("check_time =", value, "checkTime");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andCheckTimeNotEqualTo(Date value) {
+    public TbSeckillGoodsExample.Criteria andCheckTimeNotEqualTo(Date value) {
             addCriterion("check_time <>", value, "checkTime");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andCheckTimeGreaterThan(Date value) {
+    public TbSeckillGoodsExample.Criteria andCheckTimeGreaterThan(Date value) {
             addCriterion("check_time >", value, "checkTime");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andCheckTimeGreaterThanOrEqualTo(Date value) {
+    public TbSeckillGoodsExample.Criteria andCheckTimeGreaterThanOrEqualTo(Date value) {
             addCriterion("check_time >=", value, "checkTime");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andCheckTimeLessThan(Date value) {
+    public TbSeckillGoodsExample.Criteria andCheckTimeLessThan(Date value) {
             addCriterion("check_time <", value, "checkTime");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andCheckTimeLessThanOrEqualTo(Date value) {
+    public TbSeckillGoodsExample.Criteria andCheckTimeLessThanOrEqualTo(Date value) {
             addCriterion("check_time <=", value, "checkTime");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andCheckTimeIn(List<Date> values) {
+    public TbSeckillGoodsExample.Criteria andCheckTimeIn(List<Date> values) {
             addCriterion("check_time in", values, "checkTime");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andCheckTimeNotIn(List<Date> values) {
+    public TbSeckillGoodsExample.Criteria andCheckTimeNotIn(List<Date> values) {
             addCriterion("check_time not in", values, "checkTime");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andCheckTimeBetween(Date value1, Date value2) {
+    public TbSeckillGoodsExample.Criteria andCheckTimeBetween(Date value1, Date value2) {
             addCriterion("check_time between", value1, value2, "checkTime");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andCheckTimeNotBetween(Date value1, Date value2) {
+    public TbSeckillGoodsExample.Criteria andCheckTimeNotBetween(Date value1, Date value2) {
             addCriterion("check_time not between", value1, value2, "checkTime");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andStatusIsNull() {
+    public TbSeckillGoodsExample.Criteria andStatusIsNull() {
             addCriterion("status is null");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andStatusIsNotNull() {
+    public TbSeckillGoodsExample.Criteria andStatusIsNotNull() {
             addCriterion("status is not null");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andStatusEqualTo(String value) {
+    public TbSeckillGoodsExample.Criteria andStatusEqualTo(String value) {
             addCriterion("status =", value, "status");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andStatusNotEqualTo(String value) {
+    public TbSeckillGoodsExample.Criteria andStatusNotEqualTo(String value) {
             addCriterion("status <>", value, "status");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andStatusGreaterThan(String value) {
+    public TbSeckillGoodsExample.Criteria andStatusGreaterThan(String value) {
             addCriterion("status >", value, "status");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andStatusGreaterThanOrEqualTo(String value) {
+    public TbSeckillGoodsExample.Criteria andStatusGreaterThanOrEqualTo(String value) {
             addCriterion("status >=", value, "status");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andStatusLessThan(String value) {
+    public TbSeckillGoodsExample.Criteria andStatusLessThan(String value) {
             addCriterion("status <", value, "status");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andStatusLessThanOrEqualTo(String value) {
+    public TbSeckillGoodsExample.Criteria andStatusLessThanOrEqualTo(String value) {
             addCriterion("status <=", value, "status");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andStatusLike(String value) {
+    public TbSeckillGoodsExample.Criteria andStatusLike(String value) {
             addCriterion("status like", value, "status");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andStatusNotLike(String value) {
+    public TbSeckillGoodsExample.Criteria andStatusNotLike(String value) {
             addCriterion("status not like", value, "status");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andStatusIn(List<String> values) {
+    public TbSeckillGoodsExample.Criteria andStatusIn(List<String> values) {
             addCriterion("status in", values, "status");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andStatusNotIn(List<String> values) {
+    public TbSeckillGoodsExample.Criteria andStatusNotIn(List<String> values) {
             addCriterion("status not in", values, "status");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andStatusBetween(String value1, String value2) {
+    public TbSeckillGoodsExample.Criteria andStatusBetween(String value1, String value2) {
             addCriterion("status between", value1, value2, "status");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andStatusNotBetween(String value1, String value2) {
+    public TbSeckillGoodsExample.Criteria andStatusNotBetween(String value1, String value2) {
             addCriterion("status not between", value1, value2, "status");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andStartTimeIsNull() {
+    public TbSeckillGoodsExample.Criteria andStartTimeIsNull() {
             addCriterion("start_time is null");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andStartTimeIsNotNull() {
+    public TbSeckillGoodsExample.Criteria andStartTimeIsNotNull() {
             addCriterion("start_time is not null");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andStartTimeEqualTo(Date value) {
+    public TbSeckillGoodsExample.Criteria andStartTimeEqualTo(Date value) {
             addCriterion("start_time =", value, "startTime");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andStartTimeNotEqualTo(Date value) {
+    public TbSeckillGoodsExample.Criteria andStartTimeNotEqualTo(Date value) {
             addCriterion("start_time <>", value, "startTime");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andStartTimeGreaterThan(Date value) {
+    public TbSeckillGoodsExample.Criteria andStartTimeGreaterThan(Date value) {
             addCriterion("start_time >", value, "startTime");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andStartTimeGreaterThanOrEqualTo(Date value) {
+    public TbSeckillGoodsExample.Criteria andStartTimeGreaterThanOrEqualTo(Date value) {
             addCriterion("start_time >=", value, "startTime");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andStartTimeLessThan(Date value) {
+    public TbSeckillGoodsExample.Criteria andStartTimeLessThan(Date value) {
             addCriterion("start_time <", value, "startTime");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andStartTimeLessThanOrEqualTo(Date value) {
+    public TbSeckillGoodsExample.Criteria andStartTimeLessThanOrEqualTo(Date value) {
             addCriterion("start_time <=", value, "startTime");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andStartTimeIn(List<Date> values) {
+    public TbSeckillGoodsExample.Criteria andStartTimeIn(List<Date> values) {
             addCriterion("start_time in", values, "startTime");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andStartTimeNotIn(List<Date> values) {
+    public TbSeckillGoodsExample.Criteria andStartTimeNotIn(List<Date> values) {
             addCriterion("start_time not in", values, "startTime");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andStartTimeBetween(Date value1, Date value2) {
+    public TbSeckillGoodsExample.Criteria andStartTimeBetween(Date value1, Date value2) {
             addCriterion("start_time between", value1, value2, "startTime");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andStartTimeNotBetween(Date value1, Date value2) {
+    public TbSeckillGoodsExample.Criteria andStartTimeNotBetween(Date value1, Date value2) {
             addCriterion("start_time not between", value1, value2, "startTime");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andEndTimeIsNull() {
+    public TbSeckillGoodsExample.Criteria andEndTimeIsNull() {
             addCriterion("end_time is null");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andEndTimeIsNotNull() {
+    public TbSeckillGoodsExample.Criteria andEndTimeIsNotNull() {
             addCriterion("end_time is not null");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andEndTimeEqualTo(Date value) {
+    public TbSeckillGoodsExample.Criteria andEndTimeEqualTo(Date value) {
             addCriterion("end_time =", value, "endTime");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andEndTimeNotEqualTo(Date value) {
+    public TbSeckillGoodsExample.Criteria andEndTimeNotEqualTo(Date value) {
             addCriterion("end_time <>", value, "endTime");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andEndTimeGreaterThan(Date value) {
+    public TbSeckillGoodsExample.Criteria andEndTimeGreaterThan(Date value) {
             addCriterion("end_time >", value, "endTime");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andEndTimeGreaterThanOrEqualTo(Date value) {
+    public TbSeckillGoodsExample.Criteria andEndTimeGreaterThanOrEqualTo(Date value) {
             addCriterion("end_time >=", value, "endTime");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andEndTimeLessThan(Date value) {
+    public TbSeckillGoodsExample.Criteria andEndTimeLessThan(Date value) {
             addCriterion("end_time <", value, "endTime");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andEndTimeLessThanOrEqualTo(Date value) {
+    public TbSeckillGoodsExample.Criteria andEndTimeLessThanOrEqualTo(Date value) {
             addCriterion("end_time <=", value, "endTime");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andEndTimeIn(List<Date> values) {
+    public TbSeckillGoodsExample.Criteria andEndTimeIn(List<Date> values) {
             addCriterion("end_time in", values, "endTime");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andEndTimeNotIn(List<Date> values) {
+    public TbSeckillGoodsExample.Criteria andEndTimeNotIn(List<Date> values) {
             addCriterion("end_time not in", values, "endTime");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andEndTimeBetween(Date value1, Date value2) {
+    public TbSeckillGoodsExample.Criteria andEndTimeBetween(Date value1, Date value2) {
             addCriterion("end_time between", value1, value2, "endTime");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andEndTimeNotBetween(Date value1, Date value2) {
+    public TbSeckillGoodsExample.Criteria andEndTimeNotBetween(Date value1, Date value2) {
             addCriterion("end_time not between", value1, value2, "endTime");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andNumIsNull() {
+    public TbSeckillGoodsExample.Criteria andNumIsNull() {
             addCriterion("num is null");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andNumIsNotNull() {
+    public TbSeckillGoodsExample.Criteria andNumIsNotNull() {
             addCriterion("num is not null");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andNumEqualTo(Integer value) {
+    public TbSeckillGoodsExample.Criteria andNumEqualTo(Integer value) {
             addCriterion("num =", value, "num");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andNumNotEqualTo(Integer value) {
+    public TbSeckillGoodsExample.Criteria andNumNotEqualTo(Integer value) {
             addCriterion("num <>", value, "num");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andNumGreaterThan(Integer value) {
+    public TbSeckillGoodsExample.Criteria andNumGreaterThan(Integer value) {
             addCriterion("num >", value, "num");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andNumGreaterThanOrEqualTo(Integer value) {
+    public TbSeckillGoodsExample.Criteria andNumGreaterThanOrEqualTo(Integer value) {
             addCriterion("num >=", value, "num");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andNumLessThan(Integer value) {
+    public TbSeckillGoodsExample.Criteria andNumLessThan(Integer value) {
             addCriterion("num <", value, "num");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andNumLessThanOrEqualTo(Integer value) {
+    public TbSeckillGoodsExample.Criteria andNumLessThanOrEqualTo(Integer value) {
             addCriterion("num <=", value, "num");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andNumIn(List<Integer> values) {
+    public TbSeckillGoodsExample.Criteria andNumIn(List<Integer> values) {
             addCriterion("num in", values, "num");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andNumNotIn(List<Integer> values) {
+    public TbSeckillGoodsExample.Criteria andNumNotIn(List<Integer> values) {
             addCriterion("num not in", values, "num");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andNumBetween(Integer value1, Integer value2) {
+    public TbSeckillGoodsExample.Criteria andNumBetween(Integer value1, Integer value2) {
             addCriterion("num between", value1, value2, "num");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andNumNotBetween(Integer value1, Integer value2) {
+    public TbSeckillGoodsExample.Criteria andNumNotBetween(Integer value1, Integer value2) {
             addCriterion("num not between", value1, value2, "num");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andStockCountIsNull() {
+    public TbSeckillGoodsExample.Criteria andStockCountIsNull() {
             addCriterion("stock_count is null");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andStockCountIsNotNull() {
+    public TbSeckillGoodsExample.Criteria andStockCountIsNotNull() {
             addCriterion("stock_count is not null");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andStockCountEqualTo(Integer value) {
+    public TbSeckillGoodsExample.Criteria andStockCountEqualTo(Integer value) {
             addCriterion("stock_count =", value, "stockCount");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andStockCountNotEqualTo(Integer value) {
+    public TbSeckillGoodsExample.Criteria andStockCountNotEqualTo(Integer value) {
             addCriterion("stock_count <>", value, "stockCount");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andStockCountGreaterThan(Integer value) {
+    public TbSeckillGoodsExample.Criteria andStockCountGreaterThan(Integer value) {
             addCriterion("stock_count >", value, "stockCount");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andStockCountGreaterThanOrEqualTo(Integer value) {
+    public TbSeckillGoodsExample.Criteria andStockCountGreaterThanOrEqualTo(Integer value) {
             addCriterion("stock_count >=", value, "stockCount");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andStockCountLessThan(Integer value) {
+    public TbSeckillGoodsExample.Criteria andStockCountLessThan(Integer value) {
             addCriterion("stock_count <", value, "stockCount");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andStockCountLessThanOrEqualTo(Integer value) {
+    public TbSeckillGoodsExample.Criteria andStockCountLessThanOrEqualTo(Integer value) {
             addCriterion("stock_count <=", value, "stockCount");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andStockCountIn(List<Integer> values) {
+    public TbSeckillGoodsExample.Criteria andStockCountIn(List<Integer> values) {
             addCriterion("stock_count in", values, "stockCount");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andStockCountNotIn(List<Integer> values) {
+    public TbSeckillGoodsExample.Criteria andStockCountNotIn(List<Integer> values) {
             addCriterion("stock_count not in", values, "stockCount");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andStockCountBetween(Integer value1, Integer value2) {
+    public TbSeckillGoodsExample.Criteria andStockCountBetween(Integer value1, Integer value2) {
             addCriterion("stock_count between", value1, value2, "stockCount");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andStockCountNotBetween(Integer value1, Integer value2) {
+    public TbSeckillGoodsExample.Criteria andStockCountNotBetween(Integer value1, Integer value2) {
             addCriterion("stock_count not between", value1, value2, "stockCount");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andIntroductionIsNull() {
+    public TbSeckillGoodsExample.Criteria andIntroductionIsNull() {
             addCriterion("introduction is null");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andIntroductionIsNotNull() {
+    public TbSeckillGoodsExample.Criteria andIntroductionIsNotNull() {
             addCriterion("introduction is not null");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andIntroductionEqualTo(String value) {
+    public TbSeckillGoodsExample.Criteria andIntroductionEqualTo(String value) {
             addCriterion("introduction =", value, "introduction");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andIntroductionNotEqualTo(String value) {
+    public TbSeckillGoodsExample.Criteria andIntroductionNotEqualTo(String value) {
             addCriterion("introduction <>", value, "introduction");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andIntroductionGreaterThan(String value) {
+    public TbSeckillGoodsExample.Criteria andIntroductionGreaterThan(String value) {
             addCriterion("introduction >", value, "introduction");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andIntroductionGreaterThanOrEqualTo(String value) {
+    public TbSeckillGoodsExample.Criteria andIntroductionGreaterThanOrEqualTo(String value) {
             addCriterion("introduction >=", value, "introduction");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andIntroductionLessThan(String value) {
+    public TbSeckillGoodsExample.Criteria andIntroductionLessThan(String value) {
             addCriterion("introduction <", value, "introduction");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andIntroductionLessThanOrEqualTo(String value) {
+    public TbSeckillGoodsExample.Criteria andIntroductionLessThanOrEqualTo(String value) {
             addCriterion("introduction <=", value, "introduction");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andIntroductionLike(String value) {
+    public TbSeckillGoodsExample.Criteria andIntroductionLike(String value) {
             addCriterion("introduction like", value, "introduction");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andIntroductionNotLike(String value) {
+    public TbSeckillGoodsExample.Criteria andIntroductionNotLike(String value) {
             addCriterion("introduction not like", value, "introduction");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andIntroductionIn(List<String> values) {
+    public TbSeckillGoodsExample.Criteria andIntroductionIn(List<String> values) {
             addCriterion("introduction in", values, "introduction");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andIntroductionNotIn(List<String> values) {
+    public TbSeckillGoodsExample.Criteria andIntroductionNotIn(List<String> values) {
             addCriterion("introduction not in", values, "introduction");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andIntroductionBetween(String value1, String value2) {
+    public TbSeckillGoodsExample.Criteria andIntroductionBetween(String value1, String value2) {
             addCriterion("introduction between", value1, value2, "introduction");
             return (Criteria) this;
-        }
+    }
 
-        public Criteria andIntroductionNotBetween(String value1, String value2) {
+    public TbSeckillGoodsExample.Criteria andIntroductionNotBetween(String value1, String value2) {
             addCriterion("introduction not between", value1, value2, "introduction");
             return (Criteria) this;
-        }
     }
 
-    public static class Criteria extends GeneratedCriteria {
+  }
 
-        protected Criteria() {
-            super();
-        }
-    }
+  public static class Criterion {
+    private String condition;
 
-    public static class Criterion {
-        private String condition;
+    private Object value;
 
-        private Object value;
+    private Object secondValue;
 
-        private Object secondValue;
+    private boolean noValue;
 
-        private boolean noValue;
+    private boolean singleValue;
 
-        private boolean singleValue;
+    private boolean betweenValue;
 
-        private boolean betweenValue;
+    private boolean listValue;
 
-        private boolean listValue;
+    private String typeHandler;
 
-        private String typeHandler;
-
-        public String getCondition() {
+    public String getCondition() {
             return condition;
-        }
+    }
 
-        public Object getValue() {
+    public Object getValue() {
             return value;
-        }
+    }
 
-        public Object getSecondValue() {
+    public Object getSecondValue() {
             return secondValue;
-        }
+    }
 
-        public boolean isNoValue() {
+    public boolean isNoValue() {
             return noValue;
-        }
+    }
 
-        public boolean isSingleValue() {
+    public boolean isSingleValue() {
             return singleValue;
-        }
+    }
 
-        public boolean isBetweenValue() {
+    public boolean isBetweenValue() {
             return betweenValue;
-        }
+    }
 
-        public boolean isListValue() {
+    public boolean isListValue() {
             return listValue;
-        }
+    }
 
-        public String getTypeHandler() {
+    public String getTypeHandler() {
             return typeHandler;
-        }
+    }
 
-        protected Criterion(String condition) {
+    protected Criterion(String condition) {
             super();
             this.condition = condition;
             this.typeHandler = null;
             this.noValue = true;
-        }
+    }
 
-        protected Criterion(String condition, Object value, String typeHandler) {
+    protected Criterion(String condition, Object value, String typeHandler) {
             super();
             this.condition = condition;
             this.value = value;
@@ -1190,23 +1191,25 @@ public class TbSeckillGoodsExample {
             } else {
                 this.singleValue = true;
             }
-        }
+    }
 
-        protected Criterion(String condition, Object value) {
+    protected Criterion(String condition, Object value) {
             this(condition, value, null);
-        }
+    }
 
-        protected Criterion(String condition, Object value, Object secondValue, String typeHandler) {
+    protected Criterion(String condition, Object value, Object secondValue, String typeHandler) {
             super();
             this.condition = condition;
             this.value = value;
             this.secondValue = secondValue;
             this.typeHandler = typeHandler;
             this.betweenValue = true;
-        }
-
-        protected Criterion(String condition, Object value, Object secondValue) {
-            this(condition, value, secondValue, null);
-        }
     }
+
+    protected Criterion(String condition, Object value, Object secondValue) {
+            this(condition, value, secondValue, null);
+    }
+
+  }
+
 }

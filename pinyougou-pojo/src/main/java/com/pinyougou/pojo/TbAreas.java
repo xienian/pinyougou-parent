@@ -1,43 +1,45 @@
+
 package com.pinyougou.pojo;
 
 public class TbAreas {
-    private Integer id;
+  private Integer id;
 
-    private String areaid;
+  private String areaid;
 
-    private String area;
+  private String area;
 
-    private String cityid;
+  private String cityid;
 
-    public Integer getId() {
+  public Integer getId() {
         return id;
-    }
+  }
 
-    public void setId(Integer id) {
+  public void setId(Integer id) {
         this.id = id;
-    }
+  }
 
-    public String getAreaid() {
+  public String getAreaid() {
         return areaid;
-    }
+  }
 
-    public void setAreaid(String areaid) {
+  public void setAreaid(String areaid) {
         this.areaid = areaid == null ? null : areaid.trim();
-    }
+  }
 
-    public String getArea() {
+  public String getArea() {
         return area;
-    }
+  }
 
-    public void setArea(String area) {
+  public void setArea(String area) {
         this.area = area == null ? null : area.trim();
-    }
+  }
 
-    public String getCityid() {
+  public String getCityid() {
         return cityid;
-    }
+  }
 
-    public void setCityid(String cityid) {
+  public void setCityid(String cityid) {
         this.cityid = cityid == null ? null : cityid.trim();
-    }
+  }
+
 }

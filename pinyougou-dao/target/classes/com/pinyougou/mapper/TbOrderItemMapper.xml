@@ -7,7 +7,7 @@
     <result column="goods_id" property="goodsId" jdbcType="BIGINT" />
     <result column="order_id" property="orderId" jdbcType="BIGINT" />
     <result column="title" property="title" jdbcType="VARCHAR" />
-    <result column="price" property="price" jdbcType="DECIMAL" />
+    <result column="price" property="price" jdbcType="FLOAT" />
     <result column="num" property="num" jdbcType="INTEGER" />
     <result column="total_fee" property="totalFee" jdbcType="DECIMAL" />
     <result column="pic_path" property="picPath" jdbcType="VARCHAR" />

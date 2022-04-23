@@ -1,8 +1,4 @@
 package com.pinyougou.content.service.impl;
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.redis.core.RedisTemplate;
 
 import com.alibaba.dubbo.config.annotation.Service;
 import com.github.pagehelper.Page;
@@ -12,8 +8,11 @@ import com.pinyougou.mapper.TbContentMapper;
 import com.pinyougou.pojo.TbContent;
 import com.pinyougou.pojo.TbContentExample;
 import com.pinyougou.pojo.TbContentExample.Criteria;
-
 import entity.PageResult;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
+
+import java.util.List;
 
 /**
  * 服务实现层
@@ -133,7 +132,7 @@ public class ContentServiceImpl implements ContentService {
 			List<TbContent> list = (List<TbContent>) redisTemplate.boundHashOps("content").get(categoryId);
 			
 			if(list==null){
-				System.out.println("查询数据库===================");
+				System.out.println("查询数据库==================="+redisTemplate);
 				TbContentExample example = new TbContentExample();
 				Criteria criteria = example.createCriteria();
 				// 有效广告:

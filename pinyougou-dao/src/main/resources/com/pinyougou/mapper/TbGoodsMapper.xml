@@ -14,7 +14,7 @@
     <result column="category2_id" property="category2Id" jdbcType="BIGINT" />
     <result column="category3_id" property="category3Id" jdbcType="BIGINT" />
     <result column="small_pic" property="smallPic" jdbcType="VARCHAR" />
-    <result column="price" property="price" jdbcType="DECIMAL" />
+    <result column="price" property="price" jdbcType="FLOAT" />
     <result column="type_template_id" property="typeTemplateId" jdbcType="BIGINT" />
     <result column="is_enable_spec" property="isEnableSpec" jdbcType="VARCHAR" />
     <result column="is_delete" property="isDelete" jdbcType="VARCHAR" />

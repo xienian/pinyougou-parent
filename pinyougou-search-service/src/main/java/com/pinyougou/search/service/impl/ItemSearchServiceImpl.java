@@ -42,8 +42,9 @@ public class ItemSearchServiceImpl implements ItemSearchService {
 		Map map=new HashMap();
 		//空格处理
 		String keywords= (String)searchMap.get("keywords");
+	
 		searchMap.put("keywords", keywords.replace(" ", ""));//关键字去掉空格 
-		
+
 		//1.查询列表
 		map.putAll(searchList(searchMap));
 		//2.分组查询 商品分类列表
@@ -59,7 +60,7 @@ public class ItemSearchServiceImpl implements ItemSearchService {
 				map.putAll(searchBrandAndSpecList(categoryList.get(0)));
 			}	
 		}
-		
+		System.out.println(keywords);
 		return map;
 	}
 	

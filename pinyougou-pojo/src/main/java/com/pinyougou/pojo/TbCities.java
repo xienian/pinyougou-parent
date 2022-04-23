@@ -1,43 +1,45 @@
+
 package com.pinyougou.pojo;
 
 public class TbCities {
-    private Integer id;
+  private Integer id;
 
-    private String cityid;
+  private String cityid;
 
-    private String city;
+  private String city;
 
-    private String provinceid;
+  private String provinceid;
 
-    public Integer getId() {
+  public Integer getId() {
         return id;
-    }
+  }
 
-    public void setId(Integer id) {
+  public void setId(Integer id) {
         this.id = id;
-    }
+  }
 
-    public String getCityid() {
+  public String getCityid() {
         return cityid;
-    }
+  }
 
-    public void setCityid(String cityid) {
+  public void setCityid(String cityid) {
         this.cityid = cityid == null ? null : cityid.trim();
-    }
+  }
 
-    public String getCity() {
+  public String getCity() {
         return city;
-    }
+  }
 
-    public void setCity(String city) {
+  public void setCity(String city) {
         this.city = city == null ? null : city.trim();
-    }
+  }
 
-    public String getProvinceid() {
+  public String getProvinceid() {
         return provinceid;
-    }
+  }
 
-    public void setProvinceid(String provinceid) {
+  public void setProvinceid(String provinceid) {
         this.provinceid = provinceid == null ? null : provinceid.trim();
-    }
+  }
+
 }

@@ -1,167 +1,168 @@
+
 package com.pinyougou.pojo;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
+public class TbSeckillGoods implements Serializable {
+  private Long id;
 
-public class TbSeckillGoods implements Serializable{
-    private Long id;
+  private Long goodsId;
 
-    private Long goodsId;
+  private Long itemId;
 
-    private Long itemId;
+  private String title;
 
-    private String title;
+  private String smallPic;
 
-    private String smallPic;
+  private BigDecimal price;
 
-    private BigDecimal price;
+  private BigDecimal costPrice;
 
-    private BigDecimal costPrice;
+  private String sellerId;
 
-    private String sellerId;
+  private Date createTime;
 
-    private Date createTime;
+  private Date checkTime;
 
-    private Date checkTime;
+  private String status;
 
-    private String status;
+  private Date startTime;
 
-    private Date startTime;
+  private Date endTime;
 
-    private Date endTime;
+  private Integer num;
 
-    private Integer num;
+  private Integer stockCount;
 
-    private Integer stockCount;
+  private String introduction;
 
-    private String introduction;
-
-    public Long getId() {
+  public Long getId() {
         return id;
-    }
+  }
 
-    public void setId(Long id) {
+  public void setId(Long id) {
         this.id = id;
-    }
+  }
 
-    public Long getGoodsId() {
+  public Long getGoodsId() {
         return goodsId;
-    }
+  }
 
-    public void setGoodsId(Long goodsId) {
+  public void setGoodsId(Long goodsId) {
         this.goodsId = goodsId;
-    }
+  }
 
-    public Long getItemId() {
+  public Long getItemId() {
         return itemId;
-    }
+  }
 
-    public void setItemId(Long itemId) {
+  public void setItemId(Long itemId) {
         this.itemId = itemId;
-    }
+  }
 
-    public String getTitle() {
+  public String getTitle() {
         return title;
-    }
+  }
 
-    public void setTitle(String title) {
+  public void setTitle(String title) {
         this.title = title == null ? null : title.trim();
-    }
+  }
 
-    public String getSmallPic() {
+  public String getSmallPic() {
         return smallPic;
-    }
+  }
 
-    public void setSmallPic(String smallPic) {
+  public void setSmallPic(String smallPic) {
         this.smallPic = smallPic == null ? null : smallPic.trim();
-    }
+  }
 
-    public BigDecimal getPrice() {
+  public BigDecimal getPrice() {
         return price;
-    }
+  }
 
-    public void setPrice(BigDecimal price) {
+  public void setPrice(BigDecimal price) {
         this.price = price;
-    }
+  }
 
-    public BigDecimal getCostPrice() {
+  public BigDecimal getCostPrice() {
         return costPrice;
-    }
+  }
 
-    public void setCostPrice(BigDecimal costPrice) {
+  public void setCostPrice(BigDecimal costPrice) {
         this.costPrice = costPrice;
-    }
+  }
 
-    public String getSellerId() {
+  public String getSellerId() {
         return sellerId;
-    }
+  }
 
-    public void setSellerId(String sellerId) {
+  public void setSellerId(String sellerId) {
         this.sellerId = sellerId == null ? null : sellerId.trim();
-    }
+  }
 
-    public Date getCreateTime() {
+  public Date getCreateTime() {
         return createTime;
-    }
+  }
 
-    public void setCreateTime(Date createTime) {
+  public void setCreateTime(Date createTime) {
         this.createTime = createTime;
-    }
+  }
 
-    public Date getCheckTime() {
+  public Date getCheckTime() {
         return checkTime;
-    }
+  }
 
-    public void setCheckTime(Date checkTime) {
+  public void setCheckTime(Date checkTime) {
         this.checkTime = checkTime;
-    }
+  }
 
-    public String getStatus() {
+  public String getStatus() {
         return status;
-    }
+  }
 
-    public void setStatus(String status) {
+  public void setStatus(String status) {
         this.status = status == null ? null : status.trim();
-    }
+  }
 
-    public Date getStartTime() {
+  public Date getStartTime() {
         return startTime;
-    }
+  }
 
-    public void setStartTime(Date startTime) {
+  public void setStartTime(Date startTime) {
         this.startTime = startTime;
-    }
+  }
 
-    public Date getEndTime() {
+  public Date getEndTime() {
         return endTime;
-    }
+  }
 
-    public void setEndTime(Date endTime) {
+  public void setEndTime(Date endTime) {
         this.endTime = endTime;
-    }
+  }
 
-    public Integer getNum() {
+  public Integer getNum() {
         return num;
-    }
+  }
 
-    public void setNum(Integer num) {
+  public void setNum(Integer num) {
         this.num = num;
-    }
+  }
 
-    public Integer getStockCount() {
+  public Integer getStockCount() {
         return stockCount;
-    }
+  }
 
-    public void setStockCount(Integer stockCount) {
+  public void setStockCount(Integer stockCount) {
         this.stockCount = stockCount;
-    }
+  }
 
-    public String getIntroduction() {
+  public String getIntroduction() {
         return introduction;
-    }
+  }
 
-    public void setIntroduction(String introduction) {
+  public void setIntroduction(String introduction) {
         this.introduction = introduction == null ? null : introduction.trim();
-    }
+  }
+
 }

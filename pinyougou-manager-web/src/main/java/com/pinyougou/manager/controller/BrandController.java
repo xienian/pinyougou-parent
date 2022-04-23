@@ -1,18 +1,16 @@
 package com.pinyougou.manager.controller;
 
-import java.util.List;
-import java.util.Map;
-
+import com.alibaba.dubbo.config.annotation.Reference;
+import com.pinyougou.pojo.TbBrand;
+import com.pinyougou.sellergoods.service.BrandService;
+import entity.PageResult;
+import entity.Result;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.alibaba.dubbo.config.annotation.Reference;
-import com.pinyougou.pojo.TbBrand;
-import com.pinyougou.sellergoods.service.BrandService;
-
-import entity.PageResult;
-import entity.Result;
+import java.util.List;
+import java.util.Map;
 
 /**
  * 品牌管理的控制层的类
@@ -40,7 +38,6 @@ public class BrandController {
 	public Result save(@RequestBody TbBrand brand){
 		try{
 			brandService.save(brand);
-			
 			return new Result(true,"保存成功!");
 		}catch(Exception e){
 			e.printStackTrace();

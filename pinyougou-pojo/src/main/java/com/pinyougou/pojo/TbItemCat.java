@@ -1,45 +1,46 @@
+
 package com.pinyougou.pojo;
 
 import java.io.Serializable;
+public class TbItemCat implements Serializable {
+  private Long id;
 
-public class TbItemCat implements Serializable{
-    private Long id;
+  private Long parentId;
 
-    private Long parentId;
+  private String name;
 
-    private String name;
+  private Long typeId;
 
-    private Long typeId;
-
-    public Long getId() {
+  public Long getId() {
         return id;
-    }
+  }
 
-    public void setId(Long id) {
+  public void setId(Long id) {
         this.id = id;
-    }
+  }
 
-    public Long getParentId() {
+  public Long getParentId() {
         return parentId;
-    }
+  }
 
-    public void setParentId(Long parentId) {
+  public void setParentId(Long parentId) {
         this.parentId = parentId;
-    }
+  }
 
-    public String getName() {
+  public String getName() {
         return name;
-    }
+  }
 
-    public void setName(String name) {
+  public void setName(String name) {
         this.name = name == null ? null : name.trim();
-    }
+  }
 
-    public Long getTypeId() {
+  public Long getTypeId() {
         return typeId;
-    }
+  }
 
-    public void setTypeId(Long typeId) {
+  public void setTypeId(Long typeId) {
         this.typeId = typeId;
-    }
+  }
+
 }

@@ -1,127 +1,128 @@
+
 package com.pinyougou.pojo;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
+public class TbSeckillOrder implements Serializable {
+  private Long id;
 
-public class TbSeckillOrder implements Serializable{
-    private Long id;
+  private Long seckillId;
 
-    private Long seckillId;
+  private BigDecimal money;
 
-    private BigDecimal money;
+  private String userId;
 
-    private String userId;
+  private String sellerId;
 
-    private String sellerId;
+  private Date createTime;
 
-    private Date createTime;
+  private Date payTime;
 
-    private Date payTime;
+  private String status;
 
-    private String status;
+  private String receiverAddress;
 
-    private String receiverAddress;
+  private String receiverMobile;
 
-    private String receiverMobile;
+  private String receiver;
 
-    private String receiver;
+  private String transactionId;
 
-    private String transactionId;
-
-    public Long getId() {
+  public Long getId() {
         return id;
-    }
+  }
 
-    public void setId(Long id) {
+  public void setId(Long id) {
         this.id = id;
-    }
+  }
 
-    public Long getSeckillId() {
+  public Long getSeckillId() {
         return seckillId;
-    }
+  }
 
-    public void setSeckillId(Long seckillId) {
+  public void setSeckillId(Long seckillId) {
         this.seckillId = seckillId;
-    }
+  }
 
-    public BigDecimal getMoney() {
+  public BigDecimal getMoney() {
         return money;
-    }
+  }
 
-    public void setMoney(BigDecimal money) {
+  public void setMoney(BigDecimal money) {
         this.money = money;
-    }
+  }
 
-    public String getUserId() {
+  public String getUserId() {
         return userId;
-    }
+  }
 
-    public void setUserId(String userId) {
+  public void setUserId(String userId) {
         this.userId = userId == null ? null : userId.trim();
-    }
+  }
 
-    public String getSellerId() {
+  public String getSellerId() {
         return sellerId;
-    }
+  }
 
-    public void setSellerId(String sellerId) {
+  public void setSellerId(String sellerId) {
         this.sellerId = sellerId == null ? null : sellerId.trim();
-    }
+  }
 
-    public Date getCreateTime() {
+  public Date getCreateTime() {
         return createTime;
-    }
+  }
 
-    public void setCreateTime(Date createTime) {
+  public void setCreateTime(Date createTime) {
         this.createTime = createTime;
-    }
+  }
 
-    public Date getPayTime() {
+  public Date getPayTime() {
         return payTime;
-    }
+  }
 
-    public void setPayTime(Date payTime) {
+  public void setPayTime(Date payTime) {
         this.payTime = payTime;
-    }
+  }
 
-    public String getStatus() {
+  public String getStatus() {
         return status;
-    }
+  }
 
-    public void setStatus(String status) {
+  public void setStatus(String status) {
         this.status = status == null ? null : status.trim();
-    }
+  }
 
-    public String getReceiverAddress() {
+  public String getReceiverAddress() {
         return receiverAddress;
-    }
+  }
 
-    public void setReceiverAddress(String receiverAddress) {
+  public void setReceiverAddress(String receiverAddress) {
         this.receiverAddress = receiverAddress == null ? null : receiverAddress.trim();
-    }
+  }
 
-    public String getReceiverMobile() {
+  public String getReceiverMobile() {
         return receiverMobile;
-    }
+  }
 
-    public void setReceiverMobile(String receiverMobile) {
+  public void setReceiverMobile(String receiverMobile) {
         this.receiverMobile = receiverMobile == null ? null : receiverMobile.trim();
-    }
+  }
 
-    public String getReceiver() {
+  public String getReceiver() {
         return receiver;
-    }
+  }
 
-    public void setReceiver(String receiver) {
+  public void setReceiver(String receiver) {
         this.receiver = receiver == null ? null : receiver.trim();
-    }
+  }
 
-    public String getTransactionId() {
+  public String getTransactionId() {
         return transactionId;
-    }
+  }
 
-    public void setTransactionId(String transactionId) {
+  public void setTransactionId(String transactionId) {
         this.transactionId = transactionId == null ? null : transactionId.trim();
-    }
+  }
+
 }

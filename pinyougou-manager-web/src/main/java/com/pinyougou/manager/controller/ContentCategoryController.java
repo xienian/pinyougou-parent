@@ -102,7 +102,7 @@ public class ContentCategoryController {
 	
 		/**
 	 * 查询+分页
-	 * @param brand
+	 * @param contentCategory
 	 * @param page
 	 * @param rows
 	 * @return
